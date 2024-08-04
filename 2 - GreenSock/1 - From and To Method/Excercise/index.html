@@ -11,34 +11,33 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>BORING</h1>
+    <h1>WEEKEND</h1>
     <div class="progress"></div>
 
    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-
-        const progress = document.querySelector(".progress")
-        
-        gsap.to(progress, {
+        gsap.to(".progress", {
             width: "100%",
-            duration: 2,
-            ease: "power4.out"
+            ease: "power3.out",
+            duration: 2
         })
 
         gsap.from("h1", {
             y: -200,
-            duration: 2,
-            ease: "elastic.out(1, 0.3)"
+            ease: "elastic.out(1,0.3)",
+            duration: 2.5
         })
-
-        gsap.to(progress, {
+        
+        gsap.to(".progress", {
             height: "100%",
             top: 0,
             delay: 2,
-            backgroundColor: "white"
+            backgroundColor: "white",
+            duration: 1.5,
+            ease: "power3.inOut",
+            
         })
-
     </script>
 </body>
 </html>

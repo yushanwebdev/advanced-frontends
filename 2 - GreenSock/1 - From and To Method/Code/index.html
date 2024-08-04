@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section>
+      <a href="#">
+        <div class="outer-circle">
+          <div class="inner-circle"></div>
+          <svg viewBox="0 0 45 46" fill="none">
+            <path
+              d="M22.579 1.94958L22.579 44.0504"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M1.52856 23L43.6294 23"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="mask">
+          <span>Add to Bookmarks</span>
+        </div>
+      </a>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const link = document.querySelector("a");
+      const innerCircle = document.querySelector(".inner-circle");
+      const innerText = document.querySelector("span");
+
+      link.addEventListener("mouseenter", () => {
+        // Use gsap.to():
+        gsap.to(innerCircle, {
+          scale: 1,
+          duration: 1,
+          ease: "power4.out",
+        });
+
+        gsap.to(innerText, {
+          y: 0,
+        });
+      });
+
+      link.addEventListener("mouseleave", () => {
+        // Use gsap.to() and reset the vales:
+        gsap.to(innerCircle, {
+          scale: 0,
+          duration: 1,
+          ease: "power4.out",
+        });
+
+        gsap.to(innerText, {
+          y: -100,
+        });
+      });
+    </script>
+  </body>
+</html>
