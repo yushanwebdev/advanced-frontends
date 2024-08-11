@@ -22,12 +22,4 @@ ul li {
   font-weight: bold;
   font-size: 3rem;
   cursor: pointer;
-}
-
-.adjust {
-  flex-direction: column;
-}
-.adjust li {
-  background: red;
-  font-size: 5rem;
 }/*# sourceMappingURL=main.css.map */
