@@ -26,27 +26,26 @@
     ></script>
     <script>
       const container = document.querySelector(".container");
-
-      const tween = gsap.to(container, {
-        borderRadius: "2%",
+      const tweenContainer = gsap.to(container, {
         width: "20vw",
         height: "28vw",
+        borderRadius: "2%",
         paused: true,
       });
-      const tween2 = gsap.to("p", {
-        fontSize: "clamp(5rem, 5vw, 10rem)",
+      const tweenText = gsap.to(container.querySelector("p"), {
+        fontSize: "clamp(5rem, 5vw, 17rem)",
         x: 0,
         paused: true,
       });
 
-      container.addEventListener("mouseenter", () => {
-        tween.play();
-        tween2.play();
+      container.addEventListener("mouseover", () => {
+        tweenContainer.play();
+        tweenText.play();
       });
 
-      container.addEventListener("mouseleave", () => {
-        tween.reverse();
-        tween2.reverse();
+      container.addEventListener("mouseout", () => {
+        tweenContainer.reverse();
+        tweenText.reverse();
       });
     </script>
   </body>
