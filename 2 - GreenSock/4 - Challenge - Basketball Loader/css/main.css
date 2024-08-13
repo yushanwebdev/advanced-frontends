@@ -3,15 +3,25 @@ body {
   height: 100vh;
   display: grid;
   place-content: center;
-  background-color: #0F987F;
+  background-color: #0f987f;
   color: white;
 }
 
-img, .loader {
+img,
+.loader {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+img {
+  top: -100%;
+  transform: translate(-50%, 0) rotateZ(-295deg);
+}
+
+.loader {
+  transform: translate(-50%, -50%) scaleX(0);
 }
 
 h1 {
@@ -19,6 +29,8 @@ h1 {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   letter-spacing: -0.05em;
+  opacity: 1;
+  transform: translateY(-100%);
 }
 
 .mask {
