@@ -17,7 +17,7 @@
         <section>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#" class="link">
                         <div class="heading-container">
                             <p class="primary">2019 Yo-Yo Contest Website</p>
                             <p class="secondary">2019 Yo-Yo Contest Website</p>
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="link">
                         <div class="heading-container">
                             <p class="primary">SamAsh Guitars</p>
                             <p class="secondary">SamAsh Guitars</p>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="link">
                         <div class="heading-container">
                             <p class="primary">EastWest SoundLine</p>
                             <p class="secondary">EastWest SoundLine</p>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="link">
                         <div class="heading-container">
                             <p class="primary">NextPollution</p>
                             <p class="secondary">NextPollution</p>
@@ -67,9 +67,42 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        const links = gsap.utils.toArray(".link");
 
+        links.forEach(ele => {
+            const line = ele.querySelector(".line")
+            const headingPrimary = ele.querySelector(".heading-container .primary")
+            const headingSecondary = ele.querySelector(".heading-container .secondary")
+            const date = ele.querySelector(".date")
 
+            const eleTL = gsap.timeline({
+                defaults: {
+                    ease: "power4.inOut"
+                }
+            });
 
+            eleTL.to(line, {
+                scaleX: 1
+            })
+            eleTL.to(headingPrimary, {
+                yPercent: -100
+            }, "<")
+            eleTL.to(headingSecondary, {
+                yPercent: -50
+            }, "<")
+            eleTL.to(date, {
+                y: 0
+            }, "<")
+
+            eleTL.pause();
+
+            ele.addEventListener("mouseenter", () => {
+                eleTL.play();
+            })
+            ele.addEventListener("mouseleave", () => {
+                eleTL.reverse();
+            })
+        })
     </script>
 </body>
 </html>
