@@ -14,6 +14,10 @@ svg {
   height: 45px;
 }
 
+.container {
+  display: flex;
+}
+
 a.menu-toggle {
   display: flex;
   position: relative;
@@ -28,10 +32,6 @@ a.menu-toggle:hover:before {
   left: 0;
   top: 0;
   z-index: -1;
-}
-
-.container {
-  display: flex;
 }
 
 aside {

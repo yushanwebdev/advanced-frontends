@@ -36,44 +36,32 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        const menuToggle = document.querySelector(".menu-toggle")
+        let menuStatus = false;
 
-        const menuToggle = document.querySelector('.menu-toggle')
+       const menuTL = gsap.timeline({
+        defaults: {
+            duration: .3,
+            ease: "power4.inOut"
+        }
+       })
 
-        let menuStatus = false
+       menuTL.to(["main", "aside"], {
+        x: 0,
+        stagger: .2
+       })
 
-        const menuTL = gsap.timeline({ 
-            defaults: 
-                { 
-                    duration: .3,
-                    ease: 'power4.inOut'
-                }
-            })
+       menuTL.paused(true);
 
-        menuTL
-            .to(['main', 'aside'], {
-                x: 0,
-                stagger: .2
-            })
-            .from('aside ul li a', {
-                xPercent: -100,
-                stagger: .1
-            }, "-=.4")
-
-        
-        menuTL.paused(true)
-
-        menuToggle.addEventListener('click', () => {
-
-            if (!menuStatus) {
-                menuTL.play()
-                menuStatus = true
-            } else {
-                menuTL.reverse()
-                menuStatus = false
-            }
-            
-        })
-
+       menuToggle.addEventListener("click", () => {
+        if(!menuStatus) {
+            menuTL.play();
+            menuStatus = true
+        } else {
+            menuTL.reverse();
+            menuStatus = false
+        }
+       })
     </script>
 </body>
 </html>

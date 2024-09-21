@@ -16,6 +16,11 @@ svg {
     height: 45px;
 }
 
+.container {
+    display: flex;
+}
+
+
 a.menu-toggle {
     display: flex;
     position: relative;
@@ -33,15 +38,11 @@ a.menu-toggle {
     }
 }
 
-.container {
-    display: flex;
-}
-
 aside {
     background-color: #1E2327;
     height: 100vh;
     padding: 2em 6em 2em 2em;
-    transform: translateX(-100%);
+    transform: translateX(-100%);   
     
     h3 {
         color: #fff;
