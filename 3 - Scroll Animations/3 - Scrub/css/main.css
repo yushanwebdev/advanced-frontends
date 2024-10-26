@@ -33,6 +33,7 @@ section.primary aside p {
   font-size: 2.5rem;
   font-style: italic;
   margin-top: -0.5em;
+  line-height: 1.6;
 }
 section.primary main {
   flex: 1;
