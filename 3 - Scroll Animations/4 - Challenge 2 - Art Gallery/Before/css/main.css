@@ -19,6 +19,7 @@ section {
 ul {
   list-style: none;
   padding: 0;
+  margin: 0 4em;
   height: 100vh;
 }
 
@@ -28,14 +29,21 @@ img {
      object-fit: cover;
 }
 
+li {
+  width: 22.75%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
   position: relative;
+  display: block;
+  overflow: hidden;
 }
 a img {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 97%, 100% 80%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 97%, 100% 80%, 100% 100%, 0% 100%);
+  aspect-ratio: 45/61;
 }
 a .border {
   margin: 0.5em 0;
@@ -43,6 +51,7 @@ a .border {
   height: 1px;
   border-bottom: 1px solid black;
   transform-origin: left;
+  transform: translate(0, 0);
 }
 a .info {
   display: flex;
