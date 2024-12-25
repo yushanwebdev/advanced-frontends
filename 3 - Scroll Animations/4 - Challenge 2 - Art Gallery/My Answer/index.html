@@ -90,6 +90,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="extra.js"></script>
     <script>
       // smooth scroll
       const lenis = new Lenis();
@@ -156,7 +157,7 @@
           duration: 0.2,
         });
 
-      const elements = document.querySelectorAll("li img");
+      const elements = document.querySelectorAll("li");
 
       // Loop through each element
       elements.forEach((element) => {
@@ -169,14 +170,15 @@
           paused: true,
         });
 
-        // Define the animation for this specific element
-        hoverTl.to(element, {
+        // Define the animation for the img in the li
+        hoverTl.to(element.querySelector("img"), {
           clipPath: "polygon(0 10%, 100% 0%, 100% 90%, 0% 100%)",
         });
 
         // Add event listeners for this element
         element.addEventListener("mouseenter", () => {
           hoverTl.play();
+          randomType(element.querySelector("p"), "0123456789", 1000, true);
         });
 
         element.addEventListener("mouseleave", () => {
