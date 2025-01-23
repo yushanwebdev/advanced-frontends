@@ -68,8 +68,10 @@ svg text {
   letter-spacing: -0.2rem;
   transform: translate(40%, 55%);
 }
-svg rect {
-  fill: white;
+svg > rect {
   -webkit-mask: url(#mask);
           mask: url(#mask);
+}
+svg rect {
+  fill: white;
 }/*# sourceMappingURL=main.css.map */
